@@ -1,0 +1,57 @@
+= Hash Maps
+:icons: font
+
+[Overview of Hash Maps%collapsible]
+Hash maps store key-value powers, efficiently mapping keys to values and providing fast lookups. Efficiency is achieved through has function that computes and index for each key. Index is used to determine position of corresponding value in underlying array.
+
+.Hash Map Methods
+====
+* `Insert(key, value)`: On insertion, hash function computes index for key which is uded to find position to store value. Since different keys can hash to same index (collision), hash maps usually include collision resolution strategy that uses chaining, open addressing or other techniques. Average case time complexity is `O(1)`, assuming uniform distribution of keys.  In worst case time complexity is `O(n)`, where `n` is number of keys in hash map.
+* `Search(key)`: On search, hash function computes index for key and retrieves value from corresponding position in underlying array. Average case time complexity is `O(1)`, assuming uniform distribution of keys. In worst case time complexity is `O(n)`, where `n` is number of keys in hash map.
+* `Remove(key)`: Removing key-value pair ordinarily involved finding index by key's hash value and removing value stored at index. In average case time complexity is `O(1)`, assuming uniform distribution of keys. In worst case time complexity is `O(n)`, where `n` is number of keys in hash map.
+====
+
+== Characteristics of Hash Maps
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+*Data Access*:: [.small]#Requires repeated fast access to data.#
+*Pair-wise Relation*:: [.small]#Requires stoing data as relattionship to compute result.#
+***
+
+== Problems Solved Using Hash Maps
+[unordered]
+link:TwoSum.java[Two Sum]:: [.small]#finding two numbers in an array that add up to a given target.#
+link:WordCount.java[Word Count]:: [.small]#Find occurrence of every word in a string.#
+link:DesignHashMap.java[Design HashMap]:: [.small]#designing a hash map.#
+link:FractionToRecurringDecimal.java[Fraction to Recurring Decimal]:: [.small]#convert fraction to recurring decimal.#
+link:LoggerRateLimiter.java[Logger Rate Limiter]:: [.small]#rate limiting logger requests.#
+link:NextGreaterElementI.java[Next Greater Element I]:: [.small]#finding next greater element for each element in one array in another array.#
+link:IsomorphicStrings.java[Isomorphic Strings]:: [.small]#checking if two strings are isomorphic.#
+link:FindDuplicateFileInSystem.java[Find Duplicate File in System]:: [.small]#finding duplicate files in a system.#
+link:DotProductOfTwoSparseVectors.java[Dot Product of Two Sparse Vectors]:: [.small]#computing dot product of two sparse vectors.#
+link:HighFive.java[High Five]:: [.small]#finding top 5 scores for each student.#
+link:BullsAndCows.java[Bulls and Cows]:: [.small]#finding bulls and cows in a guess and secret number.#
+link:CustomSortString.java[Custom Sort String]:: [.small]#sorting characters of a string based on order defined in another string.#
+link:NumberOfDistinctIslands.java[Number of Distinct Islands]:: [.small]#finding number of distinct islands in a 2D grid.#
+link:NumberOfWonderfulSubstrings.java[Number of Wonderful Substrings]:: [.small]#finding number of wonderful substrings in a string.#
+link:TotalAppealOfAString.java[Total Appeal of a String]:: [.small]#finding total appeal of a string.#
+link:ContinuousSubarraySum.java[Continuous Subarray Sum]:: [.small]#finding continuous subarray whose sum is divisible by k.#
+link:UniqueNumberOfOccurrences.java[Unique Number of Occurrences]:: [.small]#checking if number of occurrences of each value in array is unique.#
+link:LongestPalindrome.java[Longest Palindrome]:: [.small]#finding longest palindrome in a string.#
+
+== Real World Applications of Hash Maps
+[unordered]
+*Telecommunications*:: [.small]#Implement phone book with name as key and number as value.#
+*E-Commerce*:: [.small]#Search for product details using product id as key.#
+*File System*:: [.small]#Store file metadata with file name as key and file content as value for later display.#
+

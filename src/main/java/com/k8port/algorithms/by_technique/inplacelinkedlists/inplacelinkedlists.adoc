@@ -1,0 +1,35 @@
+= In-place Manipulation of Linked List
+
+In-place manipulation of linked list pattern allows modification of a linked list without using additional memory. In-place means an algorithm that processes or modifies data structures using only existing memory space. The pattern is suited for problems requiring modification to the linked list structure, e.g., order of nodes. Some problems require reversing nodes in a linked list. 
+
+The naive approach to reverse a linked list is to traverse it backwards and build a new linked list (time complexity O(n) and consumes O(n) space. Implement an-place reversal of nodes using no extra space. Iterate over the linked list while keeping track of three nodes: current node, next node, and previous node. Keeping track of these three nodes allows effective reversal of the links between each pair of nodes. In-place reversal of a linked list works in O(n) time and consumes O(1) space.
+
+***
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Problem Characteristics for In-place Linked List#
+
+* *Linked List Restructuring*:: [.small]#Input data is a linked list and task is to modify its structure without modifying data.#
+* *In-place modification*:: [.small]#Modifications of a linked list must be made in place.#
+
+***
+
+== Problems Solved Using In-place LinkedList
+
+link:ReverseLinkedList.java[Reverse Linked List]:: [.small]#Reversing linkedlist in place.#
+link:ReverseNodesInK.java[Reverse Nodes in K]:: [.small]#Reversing a portion of a linkedlist in place.#
+link:ReverseLinkedListII.java[Reverse Linked List II]:: [.small]#Reversing nodes in given list from left to right.#
+link:ReorderList.java[Reorder List]:: [.small]#Reordering linkedlist as though it were folded on itself.#
+link:SwappingNodes.java[Swapping Nodes]:: [.small]#Swapping values at kth node from the beginning and end of the list.#
+link:ReverseNodesInEvenLengthGroups.java[Reverse Nodes in Even-length Groups]:: [.small]#Reversing list by group.#
+link:RemoveDuplicatesFromSortedLinkedList.java[Remove Duplicates from Sorted Linked List]:: [.small]#Removing duplicate nodes.#
+link:RemoveLinkedListElements.java[Remove Linked List Elements]:: [.small]#Removing nodes where value equals k.#
+link:SplitLinkedListIntoParts.java[Split Linked List Into Parts]:: [.small]#Splitting list into k consecutive parts.#
+link:DeleteNNodesAfterMNodesOfLinkedList.java[Delete N Nodes After M Nodes of Linked List]:: [.small]#Removing N number of nodes after traversing m number of nodes.#
+link:SwapNodesInPairs.java[Swap Nodes In Pairs]:: [.small]#Swapping pairs of nodes in a linked list.#
+
+== Real-World Problems Solved Using In-Place Linked List
+
+*File Management System*:: [.small]#File systems use LinkedLists to manage their units. Operations like rearranging files can be implemented using underlying linked list in place.#
+*Memory Management*:: [.small]#In low-level programming or embedded systems, dynamic memory can involve linked lists of free memory blocks.  Operations like merging adjacent free memory blocks can be implemented using pattern.#

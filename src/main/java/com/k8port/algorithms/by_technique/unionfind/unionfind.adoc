@@ -1,0 +1,62 @@
+= Union Find
+:icons: font
+
+[Overview of Union Find%collapsible]
+Union Find is technique used to group elements into sets based on a specified property. Each set is non-overlapping (it doesn't contain elements from other sets). Pattern uses Disjoint Set data structure to track to which set each element belongs.
+
+Sets form a tree structure and have a representative element residing in root.  Elements in tree maintain pointer to parent. Representative element's parent pointer points to itself.
+
+Pattern composed of two main operations performed on disjoint sets:
+[unordered]
+* `Union`:: [.small]#Merging sets containing v1 and v2.#
+* `Find`:: [.small]#Fins representative of set containing v.#
+
+Time complexity is `O(n)` since traversal of entire tree may be required to find representative element.
+
+.Patter Optimization Techniques
+
+An optimization called _Union by Rank_ maintains tree rank (corresponding to size of tree). When merging two tree with `union` method, always attach lower-ranking tree to tree with higher rank to ensure that when trees merge each element has the shortest-possible path to root. After applying optimization, time complexity is `O(log n)` for `union` and `find` operations.
+
+Another optimization called _Path Compression_ flattens the tree structure when `find` is called. Each find operation on a tree node updates parent node to point directly to root, reducing length of path node has to root.  Brings time compexity down to `O(log n)`
+
+== Characteristics of Union Find Technique
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+*Property-based grouping*:: [.small]#Requires arranging elements with certain property into groups or into connected components.#
+*Set combination*:: [.small]#Problem contains elements represented as separate sets at first, and requires combining them or merging them into one.#
+*Graph Data organization*:: [.small]#Problem data best organized as graph, yet data not provided in adjacency list or matrix.#
+***
+
+== Problems Solved Using Union Find Technique
+[unordered]
+link:LongestConsecutiveSequence.java[Longest Consecutive Sequence]:: [.small]#finding longest consecutive sequence in array.#
+link:SuccessorWithDelete.java[Successor with Delete]:: [.small]#finding successor of element in array after deleting another element.#
+link:RedundantConnection.java[Redundant Connection]:: [.small]#finding redundant connection in graph.#
+link:NumberOfIslands.java[Number of Islands]:: [.small]#finding number of islands in grid.#
+link:MostStonesRemovedWithSameRowOrColumn.java[Most Stones Removed with Same Row or Column]:: [.small]#finding maximum number of stones that can be removed from grid such that no two stones share same row or column.#
+link:LongestConsecutiveSequence.java[Longest Consecutive Sequence]:: [.small]#finding longest consecutive sequence in array.#
+link:LastDayWhereYouCanStillCross.java[Last Day Where You Can Still Cross]:: [.small]#finding last day where you can still cross grid.#
+link:RegionsCutBySlashes.java[Regions Cut By Slashes]:: [.small]#finding number of regions in grid after cutting slashes.#
+link:AccountsMerge.java[Accounts Merge]:: [.small]#merging accounts with same email.#
+link:MinimizeMalwareSpread.java[Minimize Malware Spread]:: [.small]#minimizing malware spread in graph.#
+link:FindIfPathExistsInGraph.java[Find if Path Exists in Graph]:: [.small]#finding if path exists in graph.#
+link:TheSkylineProblem.java[The Skyline Problem]:: [.small]#finding skyline of buildings.#
+link:EvaluateDivision.java[Evaluate Division]:: [.small]#evaluating division of two numbers.#
+
+== Real World Applications of Union Find Technique
+[unordered]
+* *Image Segmentation*:: [.small]#Divides digital images into regions of similar colors and initializes each pixel to be region on its own. Then merges adjacent regions having most similar color. Union Find provides from which region each pixel belongs and updates information when two regions merge.#
+* *Image manipulation*:: [.smal]#Image-editing applications use union find to locate objects within images, allowing for objects to be grabbed from images, selection of regions by cfolor, differentiation of background from image, etc.
+* *Network Connectivity*:: [.small]#Determine if path exists between devices in network.#
+* *Percolation*:: [.small]#Identify percolation threshold of liquid passing through filter or other porous medium. Randomize NxN grid to contain blocked and open cells.  Union find used to connect open sites and if connected path of open sites exists, liquid can percolate.#
+* *Hex (game)*:: [.small]#Make connections between pieces with same color to identify if player has won.#

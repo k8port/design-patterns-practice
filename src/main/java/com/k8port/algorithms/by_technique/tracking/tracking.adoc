@@ -1,0 +1,57 @@
+= Knowing What to Track
+:icons: font
+
+[Overview of Tracking%collapsible]
+Knowing What to Track is technique used to solve problems that require keeping track of information as iterations are performed on data structure. Tallying when customers purchase a certain item, or tracking number of times a user has clicked on an ad are examples of problems requiring tracking.
+
+Tracking involves counting occurrences of elements in a data structure (usually an array or string) and using this frequency to efficiently solve a problem. 
+
+.Tracking's Two Main Phases
+====
+* `Counting Occurrences`:: [.small]#Counting occurrences of certain events or values using data structures like hash maps, dictionaries, arrays, or simple variables.#
+* `Utilization phase`:: [.small]#Using stored frequencies to compute some result.#
+====
+
+Tracking with arrays instead of hash maps is more efficient when it's known in advance the range of elements and if range is relatively small compared to dataset.
+
+== Characteristics of Tracking Technique
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+*Frequency tracking*:: [.small]#Involves counting frequencies of elements in dataset, individually or in combinations.#
+*Pattern recognition*:: [.small]#Patterns in data are identifiable where certain elements or combinations of elements repeat frequently.#
+*Fixed Set of possibilities*:: [.small]#Problem requires choosing output from fixed set of possibilities, e.g., Yes/No, True/False, etc.#
+***
+
+== Problems Solved Using Tracking Technique
+[unordered]
+link:ContainsDuplicateII.java[Contains Duplicate II]:: [.small]#finding duplicate elements in array within k distance.#
+link:CountPrefixesOfGivenString.java[Count Prefixes of Given String]:: [.small]#counting number of strings in array that are prefixes of given string.#
+link:PalindromePermutation.java[Palindrome Permutation]:: [.small]#checking if any permutation of string is a palindrome.#
+link:ValidAnagram.java[Valid Anagram]:: [.small]#checking if two strings are anagrams of each other.#
+link:DesignTic-Tac-Toe.java[Design Tic-Tac-Toe]:: [.small]#designing a Tic-Tac-Toe game that can be played between two players.#
+link:GroupAnagrams.java[Group Anagrams]:: [.small]#grouping anagrams together in array.#
+link:MaximumFrequencyStack.java[Maximum Frequency Stack]:: [.small]#implementing a stack that returns items with highest frequency in constant time.#
+link:FirstUniqueCharacterInString.java[First Unique Character in String]:: [.small]#finding first unique character in string.#
+link:FindAllAnagramsInString.java[Find All Anagrams in String]:: [.small]#finding all anagrams of a string in another string.#
+link:LongestPalindromeByConcatenatingTwoLetterWords.java[Longest Palindrome by Concatenating Two Letter Words]:: [.small]#finding longest palindrome by concatenating two letter words from array.#
+link:RankTeamsByVotes.java[Rank Teams by Votes]:: [.small]#ranking teams based on votes.#
+link:PairsOfSongsWithTotalDurationsDivisibleBy60.java[Pairs of Songs With Total Durations Divisible by 60]:: [.small]#finding pairs of songs with total durations divisible by 60.#
+link:MinimumNumberOfPushesToTypeWordII.java[Minimum Number of Pushes to Type Word II]:: [.small]#finding minimum number of pushes to type word in keyboard.#
+link:RansomNote.java[Ransom Note]:: [.small]#checking if ransom note can be constructed from magazine.#
+
+== Real World Applications of Tracking Technique
+[unordered]
+*DNA sequence analysis*:: [.small]#Used to analyze frequency of nucleotides or amino acids in protein sequences and is used to identify genetic variations, predict protein structure, or study evolutionary relationships.#
+*Video streaming*:: [.small]#As enhancement for user video viewing experience, reinitialize the 'continue watching' table according to changing user interests.#
+*E-commerce*:: [.small]#Shows product recommendations with items frequently purchased together.#
+*Clickstream analysis*:: [.small]#Analyze frequency of user interactions to understand user behavior and preferences.#

@@ -1,0 +1,61 @@
+= K-Way Merge
+
+[Overview of K-Way Merge%collapsible]
+K-way merge pattern is an essential algorithmic strategy for merging sorted data structures like arrays and linked lists into a single structure. The technique expands on `merge sort` algorithm.
+
+`K-way merge algorithm` works by repeatedly selecting smallest or largest element from size `K` input and adding it to result list, repeating this process until all elements given input lists have been merged into output and maintained a sorted order.
+
+K-way merge can be implemented one of two ways. 
+
+.minheap implementation
+====
+Using minheap:
+
+1. Insert first element from each list into a min heap to efficiently track the smallest current element among all lists.
+2. Remove smallest element from heap (always at top) and add to output list.
+3. Track list from which each element came to know where to find next element to add to heap.
+4. After removing the smallest element and adding it to output, replace it next element from origin list.
+5. Repeat steps 2–4 until all elements from all input lists have been merged into output list.
+====
+
+.pairwise implementation
+====
+Grouping and merging pairs of lists, which simplifies merging process by reducing it to a series of merges:
+
+1. Divide K sorted lists into pairs.
+2. For each pair of lists, peform 2-way merge, resulting in k/2 merged lists.
+3. If an odd number of lists results at any point, leave one list unmerged in that round to ensure no list left out of merge process.
+4. Repeat process of pairing resulting lists and meerging until only one sorted list remains.
+====
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Characteristics of K-way Merge Pattern#
+
+* *Merging sorted arrays or matrices*: Problem involves collection of sorted arrays with rows or cols sorted and requires merging them.
+* *Finding kth smallest/largest across sorted collections*: Problem requires finding kth smallest or largest element across multiple lists.
+
+***
+
+== Problems Using K-Way Merge Pattern
+[unordered]
+link:MergeSortedArray.java[Merge Sorted Array]:: [.small]#Merging sorted arrays or matrices.#
+link:KthSmallestNumberInMSortedLists.java[Kth Smallest Number in M Sorted Lists]:: [.small]#Finding kth smallest element across multiple sorted lists.#
+link:FindKPairsWithSmallestSums.java[Find K Pairs with Smallest Sums]:: [.small]#Finding k pairs with smallest sums from multiple sorted lists.#
+link:MergeKSortedLists.java[Merge K Sorted Lists]:: [.small]#Merging multiple sorted lists into a single sorted list.#
+link:KthSmallestElementInSortedMatrix.java[Kth Smallest Element in Sorted Matrix]:: [.small]#Finding kth smallest element in a sorted matrix.#
+
+== Real World Applications of K-Way Merge
+[unordered]
+*Patient Records Aggregation*:: [.small]#In healthcare informatics, patient data can come from multiple sources (e.g., lab results, physician notes, imaging reports, etc.), each sorted by date or priority.  Requires integrating into single patient record.#
+*Merging Financial Transactions Stream*:: [.small]#Financial institutions process transactions across multiple sources like trades, payments, transfers, etc. Analysts require merged data to perform real-time market analysis or detect fraud.#
+*Log File Analysis*:: [.small]#Large-scale web services generate log files from multiple servers in chronological order that must be merged into single stream.#

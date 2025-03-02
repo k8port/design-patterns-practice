@@ -1,0 +1,34 @@
+= Merge Intervals
+
+Pattern deals with problems involving overlapping intervals where each interval is represented by a start and end time.
+Involves tasks like merging intersecting intervals, inserting new intervals into existing sets, and determining the minimum number of intervals needed to cover a given 
+range. The most common types of problems solved using this pattern are event scheduling, resource allocation, and time slot consolidation.
+
+The key to grasping the power of this algorithm pattern is understanding how any 2 intervals overlap.
+
+***
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Problem Characteristics for Merge Intervals Pattern#
+
+* *Array of Intervals*: [.small]#Input data is an array of intervals.#
+* *Overlapping Intervals*: [.small]#Problem requires managing overlapping intervals through finding union, intersection or gaps inbetween.#
+
+***
+
+== Problems solved using Merge Intervals
+
+link:MergeIntervals.java[Merge Intervals]:: [.small]#merging all overlapping intervals from a sorted list of intervals.#
+link:MeetingRooms.java[Meeting Rooms]:: [.small]#Determining meeting time availability given list of preexisting blocked intervals.#
+link:InsertInterval.java[Insert Interval]:: [.small]#Inserting new interval into correct interval.#
+link:IntervalListIntersections.java[Interval List Intersection]:: [.small]#Finding intersection of 2 interval lists.#
+link:EmployeeFreeTime.java[Employee Free Time]:: [.small]#Finding list of intervals representing free time for all employees.#
+link:TaskScheduler.java[Task Scheduler]:: [.small]#Finding minimun number of CPU time unit to complete task list.#
+link:MeetingRoomsII.java[Meeting Rooms II]:: [.small]#Finding minimum number of available meeting rooms to host set of meetings.#
+
+== Real World Applications of Merge Intervals
+
+*Display Busy Schedule*:: [.small]#Displaying busy hours of a user.#
+*Schedule Meeting*:: [.small]#Add new meeting to schedule during free interval of users.#
+*Task Scheduling OR*:: [.small]#Schedule tasks for an Operating System (OS) based on task priority and free slots in processing schedule.#

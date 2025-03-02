@@ -1,0 +1,58 @@
+= Sliding Window
+
+Sliding window is a pattern used to process sequential data, arrays, and strings, i.e., subarray or substring problems. It involves maintaining a dynamic window that slides through the array or string, adjusting boundaries as needed. The window is used to slide over the data in chunks corresponding to window size, which can be set according to the problem’s requirements. It can be seen as a variation of the two pointers pattern, with the pointers being used to set the window bounds.
+
+Imagine you’re in a long hallway lined with paintings, looking through a narrow frame that only reveals a portion of the hallway at any time. As you move the frame, new paintings come into view while others leave. The process of moving and adjusting what’s visible is how sliding window technique operates over data.
+
+Consider a problem that requires finding `k` consecutive integers with the largest sum in an array. Time complexity of a naive solution is O(kn) since  all subarrays of size k must be computed. Using sliding window pattern involves subtracting the element exiting the window and adding the element entering the window to update maximum sum, allowing sums to be updated in constant time, and yielding an overall time complexity of O(n).
+
+Computations performed each time the window moves take O(1) time or would be a slow-growing function, e.g., log of a small variable.
+
+***
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Problem Characteristics for Sliding Window Technique#
+
+* *Sequential data*: data is sequential, e.g., array, string, etc.
+* *Subarray or substring*: problem involves finding a subarray or substring.
+* *Dynamic window*: window size is dynamic and can change based on problem requirements.
+* *Sliding window*: window slides over data structure, adjusting boundaries as needed.
+* *Computations per window movement are O(1)*: computations performed each time the window moves take O(1) time or would be a slow-growing function, e.g., log of a small variable. 
+
+***
+
+== Problems solved with Sliding Window Technique
+
+link:MaximumSumSubarrayOfSizeK.java[Maximum Sum Subarray of Size K]:: [.small]#finding maximum sum of a subarray of size k.#
+link:MinimumSizeSubarraySum.java[Minimum Size Subarray Sum]:: [.small]#finding min length of contiguous subarray with sum greater or equal to target sum.#
+link:SlidingWindowMaximum.java[Sliding Window Maximum]:: [.small]#finding max values in all contiguous subarrays of length w.#
+link:MaxAverageSubarraySum.java[Max Average Subarray Sum]:: [.small]#finding max average of contiguous subarray with length k.#
+link:DietPlanPerformance.java[Diet Plan Performance]:: [.small]#finding total calories consumed over k days.#
+link:ContainsDuplicate.java[Contains Duplicate]:: [.small]#finding if array contains duplicates with a stretch applied.#
+link:LongestSubstringWithKDistinctCharacters.java[Longest Substring with K Distinct Characters]:: [.small]#finding longest substring with k distinct characters.#
+link:LongestSubstringWithSameLettersAfterReplacement.java[Longest Substring with Same Letters after Replacement]:: [.small]#finding longest substring where letters can be changed to become the same letter.#
+link:FruitsIntoBaskets.java[Fruits into Baskets]:: [.small]#finding maxiumum number of fruits possible to collect given 2 single-type baskets of certain size.#
+link:NoRepeatSubstring.java[No-repeat Substring]:: [.small]#finding longest substring without repeating characters.#
+link:RepeatedDNASequences.java[Repeated DNA Sequences]:: [.small]#finding all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.#
+link:MinimumWindowSubsequence.java[Minimum Window Subsequence]:: [.small]#finding shortest substring that is a subsequence of another given string.#
+link:MinimumWindowSubstring.java[Minimum Window Substring]:: [.small]#finding min window substring that is the shortest substring that includes all distinct characters in another string and at same frequency.#
+
+== Real World Use Cases for Sliding Window Technique
+[unordered]
+*Traffic Management*:: [.small]#Used in traffic management systems to control flow of vehicles entering and exiting highways.#
+*Data Streaming*:: [.small]#Used in data streaming applications to process data in chunks, e.g., in a data pipeline.#
+*Image Processing*:: [.small]#Used in image processing applications to process images in chunks, e.g., in a convolutional neural network.#
+*Video Processing*:: [.small]#Used in video processing applications to process video frames in chunks, e.g., in a video encoder.#
+*Audio Processing*:: [.small]#Used in audio processing applications to process audio data in chunks, e.g., in a speech recognition system.#
+*Network Monitoring*:: [.small]#Used in network monitoring applications to monitor network traffic in chunks, e.g., in a network firewall.#
+*Sensor Data Processing*:: [.small]#Used in sensor data processing applications to process sensor data in chunks, e.g., in a sensor network.#
+*Stock Market Analysis*:: [.small]#Used in stock market analysis applications to analyze stock prices in chunks, e.g., in a stock market simulator.#
+*Weather Monitoring*:: [.small]#Used in weather monitoring applications to monitor weather data in chunks, e.g., in a weather station.#
+*Data Compression*:: [.small]#Used in data compression applications to compress data in chunks, e.g., in a data pipeline.#
+*Data Encryption*:: [.small]#Used in data encryption applications to encrypt data in chunks, e.g., in a data pipeline.#
+*Data Decryption*:: [.small]#Used in data decryption applications to decrypt data in chunks, e.g., in a data pipeline.#
+*Data Transmission*:: [.small]#Used in data transmission applications to transmit data in chunks, e.g., in a data pipeline.#
+*Data Reception*:: [.small]#Used in data reception applications to receive data in chunks, e.g., in a data pipeline.#
+*Data Storage*:: [.small]#Used in data storage applications to store data in chunks, e.g., in a data pipeline.#
+*Data Retrieval*:: [.small]#Used in data retrieval applications to retrieve data in chunks, e.g., in a data pipeline.#

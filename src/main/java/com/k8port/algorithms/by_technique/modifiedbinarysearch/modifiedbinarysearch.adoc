@@ -1,0 +1,90 @@
+= Modified Binary Search
+:icons: font
+
+[Overview of Modified Binary Search Pattern%collapsible]
+
+Modified binary search pattern is an extension of traditional binary search algorithm and is applicable to a wide range of problems.
+
+.Classic Binary Search
+====
+
+NOTE: Recap of `classic binary search`, an algorithm used to find target values in sorted arrays or lists that support direct addressing (e.g., random access). 
+
+Follows `divide-and-conquer` approach, significantly reducing search space each iteration.
+
+Uses 3 indices: `start`, `end`, and `middle` as follows:
+[unordered]
+1. Set `start` and `end` indices to first and last elements of an array.
+2. Calculate position of `middle` index using average of `start` and `end`.
+3. Compare target value with element at `middle` index.
+4. If target value equal to `middle`, return element at `middle` as target value.
+5. If target value less than `middle`, update `end` to `middle` − 1 and repeat from step 2 on. (_Since array is sorted, values between `middle` and `end` are greater than target value and its safe to eliminate this half of search space_).
+6. If target value greater than `middle`, update start index to `middle + 1` and repeat from step 2. (_Safe to eliminate smaller half of search space_).
+7. Continue until target value is found or search space exhausted (`start` crosses `end`).
+
+Reaches target value in `O(log(n))` time since array is divided in 2 at each step.  Brute-force approach requires traversal of entire array without partitioning and takes `O(n)` as worst case.
+
+====
+
+.Explanation of Modified Binary Search
+====
+
+Note: Modified binary search is an algorithmic pattern that builds upon `classic binary search` algorithm by applying certain conditions or transformations, allowing for solution of problems where input data is modified.
+
+Common variations include:
+[unordered]
+*Binary search on modified array*::  [.small]#e.g., sorted and rotated around a pivot, having a condition. To handle, modify binary search to detect anomalies to sorted order.#
+*Binary search with multiple requirements*::  [.small]#e.g., target value. Adapt comparison logic to accommodate multiple specifications, e.g., finding target range, finding leftmost/rightmost occurrence of target value.#
+
+====
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+---
+[unordered]
+*Target value in sorted data*:: Involves locating specified target value or identifying first or last occurrence of within sorted array or list.
+*Partially sorted segments*:: Segments of input array are sorted.
+---
+
+***
+:tip-caption: :warning:
+
+Warning: Avoid pattern when problem matches criteria outlined below.
+
+[unordered]
+---
+*Lack of direct addressing*:: Input data structure does not support direct addressing.
+*Unsorted or inappropriately sorted data*:: data to search is _not_ sorted according to relevant criteria.
+*Non-value-based solutions*:: Problem does not require identifying specific value or range of values.
+---
+
+
+== Problems Solved Using Modified Binary Search Pattern
+[unordered]
+link:FirstAndLastPostionOfElement.java[FirstAndLastPostionOfElement]:: [.small]#Finding 1st and last position of given element in sorted array.#
+link:SqrtX.java[SqrtX]:: [.small]#Finding Square root of X or given value.#
+link:BinarySearch.java[BinarySearch]:: [.small]#Finding target in sorted array.#
+link:RotatedSortedArraySearch.java[RotatedSortedArraySearch]:: [.small]#Finding target in rotated sorted array.#
+link:FirstBadVersion.java[FirstBadVersion]:: [.small]#Finding first bad software version from list of versions reducing API calls.#
+link:RandomPickWithWeights.java[RandomPickWithWeights]:: [.small]#Implementing random weight pick based on value.#
+link:FindKClosestElements.java[FindKClosestElements]:: [.small]#Finding k closest elements in value in a given int array.#
+link:SingleElementInSortedArray.java[SingleElementInSortedArray]:: [.small]#Finding int value appearing only once.#
+link:MaxiumValueAtGivenIndexInBoundedArray.java[MaxiumValueAtGivenIndexInBoundedArray]:: [.small]#Constructing array based on 3 values: `n`, `index` and `maxSum`.#
+link:KWeakestRowsInMatrix.java[KWeakestRowsInMatrix]:: [.small]#Finding k weakest rows in matrix given specified criteria.#
+link:SplitArrayLargestSum.java[SplitArrayLargestSum]:: [.small]#Splitting int array into k non-empty subarrays so that larges sum is minimized.#
+link:RotatedSortedArraySearchII.java[RotatedSortedArraySearchII]:: [.small]#Finding target in rotated sorted array with variation.#
+
+== Real World Applications of Modified Binary Search Pattern
+[unordered]
+*Dictionary searches*:: [.small]#Uses classic binary search to find required words in alphabetized list. To find all words in dictionary sharing common prefix, modify comparison operation.#
+*Range-based filtering*:: [.small]#Finds range-based information using modified binary search algorithm, e.g., to filter YouTube videos by time range, filtering bank transactions by dates, finding test scores within a range.#
+*String searching algorithms*:: [.small]#Uses adapted modified binary search for string search, e.g., searching on suffix array, longest common prefix (LCP) array (used in bioinformatics for DNA sequence analysis, text processing, and search engines).#

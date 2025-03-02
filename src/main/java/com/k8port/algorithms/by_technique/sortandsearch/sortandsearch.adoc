@@ -1,0 +1,62 @@
+= Sort and Search
+:icons: font
+
+[Overview of Sort and Search Pattern%collapsible]
+Sort and search is a widely-used problem-solving technique to address challenges surrounding the how data is organized.  The technique uses sorting and efficient search to simplify problem-solving. Sorting input data before solving many problems creates an ordered structure that enhances searching, comparing, and optimizing processes and reduces overall time complexity. Once data sorted, applying efficient search methods like `binary search` or `two-pointers` searching and validations, becomes easier and leads to a more optimized approach.
+
+.Benefits of Sorting in Sort and Search Pattern
+====
+Sorting input data is critical to sort and search because it organizes information and identifies key relationships between elements. 
+
+Key Advantages of Sorting:
+1. To be able to determine quickly value of a given element and its size relative to other elements contained in the data. 
+2. Specifies ranges and boundary conditions in the data to be able to apply binary search or similar search techniques.
+3. Eliminates duplication of effort by handling dataset comparisons prior to implementation of other problem-solving techniques.
+4. Groups related items together, aligning elements optimally for operations.
+5. Reveals hidden patterns in the data which can reveal which problem-solving technique to employ
+====
+
+== Search techniques
+After data is sorted, technique calls for a search application to be applied. Most common search technique is `binary search`, an algorithm that narrows search space by repeatedly dividing it into smaller sections and is particularly useful For locating and matching elements within a sorted dataset. Two-pointer approach is also powerful, where two pointers are positioned at opposite ends of the sorted data and move toward each other based on specific conditions or criteria. 
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Sort and Search Pattern
+[unordered]
+*Sortable data*:: [.small]#Input data is sortable prior to applying search techniques (e.g., arrays or lists of numbers) and sorting input clarifies relationships between elements and simplifies operations.#
+*Pairwise and ordered comparisons*:: [.small]#Problem involves comparing pairs or subsets of data elements to identify specific relationships or conditions, where comparisons depend on relative order of elements.#
+*Range-based values*:: [.small]#Task involves identifying or processing elements within a specific range or threshold.#
+*Optimization based on relationships*:: [.small]#Problem requires optimizing a solution by evaluating how data elements relate, such as finding maximum or minimum values or optimal distances between them.#
+*Efficient searching methods*:: [.small]#Problem benefits from efficient searching methods like binary search, two-pointer traversal, sliding window, etc., to reduce complexity.#
+
+== Problems Solved Using Sort and Search Pattern
+[unordered]
+link:DistanceValueBetweenArrays.java[Distance Value Between Arrays] [.small]#Finding distance value between two arrays where distance value is defined as count of elements in first array that are not present in second array.#
+link:LongestSubsequenceWithLimitedSum.java[Longest Subsequence With Limited Sum] [.small]#Finding longest subsequence with sum less than or equal to target value at each index.#
+link:TargetIndicesOnSortedArray.java[Target Indices on Sorted Array] [.small]#Finding list of indices where values sum to target value in sorted array.#
+link:CountPairsInTwoArrays.java[Count Pairs in Two Arrays] [.small]#Finding pairs of indices in two sorted arrays that adhere to the specified conditions.#
+link:ValidTriangleNumber.java[Valid Triangle Number] [.small]#Finding number of valid triangles formable from a given array of integers given that array values represent side lengths of triangles.#
+link:MinimumOperationsToMakeArrayElementsEqual.java[Minimum Operations to Make Array Elements Equal] [.small]#Finding minimum number of operations necessary  to make array elements equal to corresponding elements in another array.#
+link:SumOfMutatedArrayClosestToTarget.java[Sum of Mutated Array Closest to Target] [.small]#Finding integer value that brings sum of array elements closest to target value when values larger than it are replaced with it.#
+link:RangeSumOfSortedSubarraySums.java[Range Sum of Sorted Subarray Sums] [.small]#Finding sum of all subarray sums of a given array sorted in non-decreasing order.#
+link:MagneticForceBetweenTwoBalls.java[Magnetic Force Between Two Balls] [.small]#Finding maximum magnetic force between two balls placed at given positions on a line.#
+link:KthSmallestPairDistance.java[Kth Smallest Pair Distance] [.small]#Finding k-th smallest distance between a pair of integers in a given array.#
+link:MinimumSpaceWastedFromPackaging.java[Minimum Space Wasted From Packaging] [.small]#Finding minimum space wasted from packaging items into boxes of fixed size.#
+link:RussianDollEnvelopes.java[Russian Doll Envelopes] [.small]#Finding maximum number of envelopes that can be Russian doll (can be nested one inside another) based on given list of envelopes.#
+link:TwoSumLessThanK.java[Two Sum Less Than K] [.small]#Finding maximum sum of two integers in a given array that is less than a target value.#
+link:MaximumNumberOfIntegersToChooseFromARange.java[Maximum Number of Integers to Choose From a Range] [.small]#Finding maximum number of integers that can be chosen from a range to meet a given condition.#
+
+== Real World Applications of Sort and Search Pattern
+[unordered]
+*E-commerce inventory management*:: [.small]#When sorting products based on price, ratings, or popularity, pattern optimizes search process and improves user experience by simplifying filter and find within specific criteria.#
+*Logistics and transportation*:: [.small]#Sorting delivery routes based on distance or estimated delivery time as first step in optimization. Once sorted, searching routes to identify most efficient path and quickly narrowing down options by specified delivery requirements or constraints.#
+*Stock market analysis*:: [.small]#Investors and analysts sort stocks by factors like market capitalization, growth potential, or historical performance. Once sorted, searches are conducted to find stocks meeting investment criteria.#

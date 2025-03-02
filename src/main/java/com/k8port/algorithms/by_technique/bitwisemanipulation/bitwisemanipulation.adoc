@@ -1,0 +1,111 @@
+= Bitwise Manipulation
+:icons: font
+:stem: MathJax
+
+[Overview of Bitwise Manipulation%collapsible]
+All data is stored in computer memory in binary format: 0s and 1s.  Bitwise manipulation is a technique used to manipulate binary data using bitwise operators.  Logical bitwise operations are the fastest operations there are because processors natively support them. Bitwise manipulation is a technique that can efficiently transforms input into binary form or manipulates it directly at bit level to procduce problem solutions.
+
+[discrete]
+=== Important!!: Binary Numbers
+***
+
+IMPORTANT: !! &nbsp; Binary numbers can be *unsigned* or *signed*.
+[horizontal]
+*Unsigned*:: `0 to 2^n^ - 1`
+*Signed*:: `-2^(n-1)^ to 2^(n-1)^ - 1`
+
+***
+
+Bitwise operation works on bit strings, bit arrays, or bit numerals. They take bits as their operands and calculate bit value in result.
+
+[stem]
+|===
+|Name |Operator |Type |Description
+|NOT
+|`~`
+|unary
+|flips bit values
+|AND
+|&
+|binary
+|evaluates two bits to 1 if both are 1, otherwise 0
+|OR
+|\|
+|binary
+|evaluates two bits to 1 if either is 1, otherwise 0
+|XOR
+|`^`
+|binary
+|evaluates two bits to 1 if both are different, otherwise 0
+|LEFT SHIFT
+|`<<`
+|binary
+|shifts bits to left
+|RIGHT SHIFT
+|`>>`
+|binary
+|shifts bits to right
+|ARITHMETIC LEFT SHIFT (Positive)
+|`+`
+|binary
+|maintains sign bit; remaining bits shift left; fills vacated bits with 0s
+|ARITHMETIC LEFT SHIFT (Negative)
+|`-`
+|binary
+|maintains sign bit; remaining bits shift left; fills vacated bits with 0s
+|ARITHMETIC RIGHT SHIFT (Positive)
+|`+`
+|binary
+|maintains sign bit; remaining bits shift right; fills vacated bits with 0s
+|ARITHMETIC RIGHT SHIFT (Negative)
+|`-`
+|binary
+|maintains sign bit; remaining bits shift right; fills vacated bits with 1s
+|CYCLIC SHIFT
+|`>>>` or `<<<`
+|binary
+|shifts bits left or right; vacated bits reintroduced at opposite end
+|===
+
+
+== Characteristics of Bitwise Manipulation
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+*Binary Representation*:: input data usefully manipulated using primitive bitwise logical operations to compute portion of or entire solution.
+*Efficient Sorting*:: input data is unsorted and solution involves sorting more efficiently.
+***
+
+== Problems Solved Using Bitwise Manipulation
+[unordered]
+link:SwapInPlace.java[Swap In Place]:: [.small]#Swapping two umbers without using temporary variable#
+link:IsEvenOrOdd.java[Is Even or Odd]:: [.small]#Determine if a number is even or odd without using modulo operator#
+link:FindDifference.java[Find Difference]:: [.small]#Find the difference between two numbers without using subtraction operator#
+link:ComplementOfBase10Integer.java[Complement of Base 10 Integer]:: [.small]#Find the complement of a base 10 integer#
+link:FlipAnImage.java[Flip an Image]:: [.small]#Flip an image horizontally#
+link:SingleNumber.java[Single Number]:: [.small]#Find the single number in an array where every other number appears twice#
+link:SingleNumberII.java[Single Number II]:: [.small]#Find the single number in an array where every other number appears three times#
+link:EncodeOrDecodeStrings.java[Encode or Decode Strings]:: [.small]#Encode or decode a string using base64 encoding#
+link:SumOfAllSubsetXORTotals.java[Sum of All Subset XOR Totals]:: [.small]#Find the sum of all subset XOR totals#
+link:FindKthLuckyNumber.java[Find Kth Lucky Number]:: [.small]#Find the kth lucky number#
+link:MinimumNumberOfKConsecutiveBitFlips.java[Minimum Number of K Consecutive Bit Flips]:: [.small]#Find the minimum number of consecutive bit flips to make all numbers in an array equal#
+link:FindLongestSubstringHavingVowelsInEvenCounts.java[Find Longest Substring Having Vowels in Even Counts]:: [.small]#Find the longest substring having vowels in even counts#
+link:CountTripletsThatCanFormTwoArraysOfEqualXOR.java[Count Triplets That Can Form Two Arrays of Equal XOR]:: [.small]#Count triplets that can form two arrays of equal XOR#
+link:LongestSubarrayWithMaximumBitwiseAND.java[Longest Subarray with Maximum Bitwise AND]:: [.small]#Find the longest subarray with maximum bitwise AND#
+link:ReverseBits.java[Reverse Bits]:: [.small]#Reverse the bits of a given integer#
+
+== Real World Applications of Bitwise Manipulation
+[unordered]
+* *Compression Algorithms*:: [.small]#Compression techniques like Huffman coding use bitwise operations to encode and decode bit-level data for compression purposes,data compressions without loss of information#
+* *Status Register*:: [.small]#Compute processors have status register where initial bit is for zero flag (is result zero?). Bit is cleared using mask to reset register#
+* *Cryptography*:: [.small]#Cyclic shifts commonly used to introduce confusion and diffusion in cryptographic algorithms#
+* *Hash Functions*:: [.small]#Bitwise operations used to compute checksums in has functions like Cyclic Redundancy Check(CRC) and Adler-32. Used for data integrity verification#

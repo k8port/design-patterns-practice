@@ -1,0 +1,62 @@
+= Topological Sort
+:icons: font
+
+[Overview of Topological Sort Pattern%collapsible]
+
+Topological sort is used to organize collections of items or tasks based on their dependencies. Some tasks may need to be completed before others can begin and this is where topological sort helps.
+
+The pattern is used to find valid orderings of elements that have dependencies on or priority over other elements.  Elements are represented as nodes in a graph and dependencies are represented as directed edges. 
+
+.How to perform Topological Sort
+====
+1. Create a graph representation of the elements and their dependencies.
+2. Identify all nodes with no incoming edges (i.e., nodes that do not depend on any other nodes).
+3. Initialize a queue and add all nodes with no incoming edges to it.
+4. While the queue is not empty:    
+[ordered, indent=2]
+a. Remove a node from the queue.
+b. Add the node to the sorted list.
+c. For each node that depends on the removed node, decrement its incoming edge count.
+d. If a node now has zero incoming edges, add it to the queue.
+5. Return the sorted list.
+====
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Topological Sort Pattern
+[unordered]
+*Dependency relationships*:: [.small]#Problem involves tasks, jobs, courses, or elements with dependencies between them that create a partial order.#
+*Ordering or sequencing*:: [.small]#Problem requires determining valid order or sequence to perform tasks, jobs, or activities, considering dependencies or prerequisites.#
+
+.Characteristics NOT suitable for Topological Sort Pattern
+[unordered]
+*Presence of cycles*:: [.small]#Graphs with cycles cannot be topologically sorted because no valid linear ordering of vertices exists that respects cyclic dependencies.#
+*Dynamic dependencies*:: [.small]#Dependencies between elements change dynamically during execution of algorithm, then topological sorting may not be suitable. Topological sorting assumes static dependencies that are known beforehand.#
+
+***
+
+== Problems Solved Using Topological Sort Pattern
+[unordered]
+link:CourseSchedule.java[Course Schedule]:: [.small]#Determine valid order of courses given their dependencies.#
+link:CompilationOrder.java[Compilation Order]:: [.small]#Determine valid order of compilation tasks given their dependencies.#
+link:AlienDictionary.java[Alien Dictionary]:: [.small]#Determine valid order of characters in an alien language.#
+link:AlienDictionaryVerification.java[Alien Dictionary Verification]:: [.small]#Verify if a given dictionary is sorted according to an alien language.#
+link:CourseScheduleII.java[Course Schedule II]:: [.small]#Determine valid order of courses given their dependencies and number of prerequisites.#
+link:BuildMatrixGivenConditions.java[Build Matrix Given Conditions]:: [.small]#Determine valid order of building a matrix given conditions.#
+link:LongestPathWithDifferentAdjacentCharacters.java[Longest Path With Different Adjacent Characters]:: [.small]#Find the longest path in a graph with different adjacent characters.#
+link:FindRecipesFromGivenIngredients.java[Find Recipes From Given Ingredients]:: [.small]#Find recipes from given ingredients.#
+
+== Real World Applications of Topological Sort Pattern
+[unordered]
+*Course scheduling*:: [.small]#In academic institutions, students need to enroll in courses based on prerequisites. Topological sorting helps determine order in which courses should be taken to ensure students meet prerequisites for each course.#
+*Recipe planning in cooking*:: [.small]#Recipes contain steps to perform in a specific order. Topological sorting helps sequence recipes correctly.#
+*Process scheduling in computer systems*:: [.small]#During system boot-up, operating system initiates various processes, some of which are dependent on others. Dependencies are represented in such a system as ordered pairs, with circular dependencies forbidden. An operating system selects order of execution in such a way that dependencies are met prior to execution.#

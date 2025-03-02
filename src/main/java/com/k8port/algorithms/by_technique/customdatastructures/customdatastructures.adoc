@@ -1,0 +1,86 @@
+= Custom Data Structures
+:icons: font
+
+[Overview of Custom Data Structures%collapsible]
+Many coding problems can be solved optimally using existing data structures like arrays, linked lists, stacks, queues, hash tables, and trees, but sometimes none of them fit the requirements of the problem and provide the desired efficiency.  In these cases it's wise to implement a custom data structure using basic data structures as building blocks and incorporating unique features and behaviors specific to the problem. Custom data structures are best describes as modified versions of or unique combinations of existing data structures.
+
+.Example: Build a Web Crawler
+====
+Web crawlers statr with a set of seed URLs, visits each one, finds links, and follows these links, add new URLs to the queue to visit.  It requires processing many, many pages and URLs, storing them and managing URLs efficiently while avoiding duplication of effort and prioritizing some over others. An optimal custom data structure could be a `URLQueue`. 
+====
+
+[discrete]
+=== Common Data Structures Used for Underlying Implementation
+A list of common data structures and their most significant properties.
+[unordered]
+
+`Arrays`
+[unordered]
+* Stores fixed-size collection of same data type
+* Elements stored sequentially in memory
+* Accessible via index
+* Insertion and deletion operations limited by requirement to shift elements
+
+`Linked Lists`
+[unordered]
+* Used to implement stacks, queues, graphs, etc.
+* Naturally dynamic size - memory allocated as needed
+* Random access not supported (address of nodes cannot be calculated)
+* Accessing an element requires traversing strucure and is `O(n)`
+* Basic insertion/deletion `O(1)` (insertion/deletion at kth element `O(n)`)
+
+`Hash Maps`
+[unordered]
+* Key-value pair data storage
+* Accessible by key, insetion/deletion/lookup operations `O(1)`
+* Can store different data types
+* Collision resolution required
+
+`Trees`
+[unordered]
+* Undirected graphs with no cycles
+* Every node has parent except for root
+* Binary trees: parent has <= 2 children, N-ary Tree: parent has <= N children
+* Naturally recursive due to hierarchical structure
+* Common traversals include depth-first search (DFS) and breadth-first search (BFS)
+* Subtypes include binary search trees (BST), AVL trees, red-black trees, heaps, tries, and n-ary trees
+
+---
+
+== Characteristics of Custom Data Structures
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+*Modification of existing data structure*:: [.small]#Requires customization of existing data structure, e.g., adding or modifying existing feature.#
+*Multiple data structures involved*:: [.small]#Requires combining one or more data structures to meet requirements efficiently.#
+
+== Problems Solved Using Custom Data Structures
+[unordered]
+link:MinmumStack.java[Minimum Stack]:: [.small]#implementing custom data structure using underlying array where `getMin()` method performs in constant time.#
+link:TwoSumIII.java[Two Sum III]:: [.small]#implementing custom data structure using underlying array where `add()` and `find()` methods perform in constant time.#
+link:SnapshotArray.java[Snapshot Array]:: [.small]#implementing custom data structure using underlying array where `snap()` and `get()` methods perform in constant time.#
+link:TimeBasedKeyValueStore.java[Time Based Key Value Store]:: [.small]#implementing custom data structure using underlying array where `set()` and `get()` methods perform in constant time.#
+link:LRUCache.java[LRU Cache]:: [.small]#implementing custom data structure using underlying array where `get()` and `put()` methods perform in constant time.#
+link:InsertDeleteGetRandom.java[Insert Delete Get Random]:: [.small]#implementing custom data structure using underlying array where `insert()`, `remove()`, and `getRandom()` methods perform in constant time.#
+link:RangeModule.java[Range Module]:: [.small]#implementing custom data structure using underlying array where `addRange()`, `removeRange()`, and `queryRange()` methods perform in constant time.#
+link:WordDistanceII.java[Word Distance II]:: [.small]#implementing custom data structure using underlying array where `shortest()` method performs in constant time.#
+link:MaxStack.java[Max Stack]:: [.small]#implementing custom data structure using underlying array where `push()`, `pop()`, `top()`, and `peekMax()` methods perform in constant time.#
+link:DesignHashSet.java[Design HashSet]:: [.small]#implementing custom data structure using underlying array where `add()`, `remove()`, and `contains()` methods perform in constant time.#
+link:MovingAverageFromDataStream.java[Moving Average from Data Stream]:: [.small]#implementing custom data structure using underlying array where `next()` method performs in constant time.#
+link:RangeSumQuery.java[Range Sum Query]:: [.small]#implementing custom data structure using underlying array where `update()` and `sumRange()` methods perform in constant time.#
+link:LFUCache.java[LFU Cache]:: [.small]#implementing custom data structure using underlying array where `get()` and `put()` methods perform in constant time.#
+
+== Real World Applications of Custom Data Structures
+[unordered]
+*Video Games*:: [.small]#Custom data structures used to maintain player state, levels, and other game details efficiently.#
+*Customizing Search Engines*:: [.small]#Uses customized trees and arrays to quickly search and display data.#
+*Managing Car Park*:: [.small]#Use custom data structure to optimize tracking of available spaces, dynamically allocating spaces, and handling reservations and payments in multi-level parking garages.#

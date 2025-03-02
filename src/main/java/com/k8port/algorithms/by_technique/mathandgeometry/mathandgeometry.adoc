@@ -1,0 +1,31 @@
+= Math and Geometry
+:icons: font
+
+[Overview of Math and Geometry%collapsible]
+
+
+== Characteristics of Math and Geometry
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use when problem matches criteria outlined below.
+
+[unordered]
+***
+
+== Problems Solved Using Math and Geometry
+[unordered]
+link:
+link:
+link:
+link:
+
+== Real World Applications of Math and Geometry
+[unordered]
+* **:: [.small]#.#

@@ -1,0 +1,61 @@
+= Cyclic Sort
+:icons: font
+
+[Overview of Cyclic Sort Pattern%collapsible]
+
+.Example Cyclic Sort Problem
+====
+Students in a class have just learned of a new assigned seating system and assigned a number corresponding to their new seat assignment.  At the beginning of class, students came in and sat randomly as it was prior to learning about the new requirement.  They were instructed to look under their desks, where an index card had been conspicuously taped to the bottom.  On the index card, a number appeared between 1 and n.  For the remainder of class, students must optimally move to their new seat assignment and are only allowed to move if no one else is moving.  The students decide on the following strategy:
+
+1. Start with the first seat: #1.  If the person holding card #1 is not seated in seat #1, move to seat #1.
+2. If seat #1 was previously occupied by someone holding a card with a different number on it, that person will swap seats with the person holding card #1.
+3. Repeat previous two steps for every seat (1 through n) in the classroom.
+====
+
+Cyclic sort is a simple and efficient in-place sorting algorithm used to sort arrays with integers in a specific range (usually 1 to n).  It places each element in its correct position by iteratively swapping with the element that should be in its place.  The correct position of any given element is the value of that element - 1. Time complexity is `O(n)` and space complexity is `O(1)`.
+
+[discrete]
+== Limitations of Cyclic Sort Pattern
+
+. *Limited Range* Efficiency contingent on range of numbers.
+. *Not stable* May alter relative order of equal elements while sorting and could lead to unintended side-effects. In task queues, tasks with equal priority are processed in the order they were received. Cyclic sort could reorder tasks having equal priority, disrupting the original sequence. 
+. *Unsuitable for non-integer arrays* Optimized for integer arrays only.
+. *Unsuitable for elements with multiple attributes* Primarily designed for sorting integers. 
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Cyclic Sort Pattern
+[unordered]
+*Limited range integer arrays*:: [.small]#Involes input array of integers in a small range, usually `1-n`.#
+*Finding missing or duplicate numbers*:: [.small]#Requires identification of missing or duplicate elements in array.#
+
+.Characteristics NOT suitable for Cyclic Sort Pattern
+[unordered]
+*Non-integer arrays*:: [.small]#Cannot handle arrays with non-integer elements.#
+*Nonarray format*:: [.small]#Input data no in array and not mappable to array.#
+*Stability Required*:: [.small]#Requires stable sorting, where equal elements maintain original order.#
+***
+
+== Problems Solved Using Cyclic Sort Pattern
+[unordered]
+link:MissingNumber.java[Missing Number]:: [.small]#Finding missing number in array of integers.#
+link:FirstMissingPositive.java[First Missing Positive]:: [.small]#Finding first missing positive number in array.#
+link:FindCorruptPair.java[Find Corrupt Pair]:: [.small]#Finding duplicate and missing numbers in array.#
+link:FindFirstKMissingPositive.java[Find First K Missing Positive]:: [.small]#Finding first `k` missing positive numbers in array.#
+
+== Real World Applications of Cyclic Sort Pattern
+[unordered]
+*Computational Biology*:: [.small]#Species on planet have n distinct genes labelled 1 - n. Find kth missing gene.#
+*Playing Card Sorting*:: [.small]#Rearrange cards range 1-52 into sorted order.#
+*Data Validation*:: [.small]#Data validation task when dealing with datasets expected to have distinct values within a certain range. Quickly identify missing or duplicate values for integrity validation and data accuracy.#
+*Package delivery routing*:: [.small]#Drivers use list of addresses mapped to integers in defined range. Cyclic sort used to optimize route.#
+

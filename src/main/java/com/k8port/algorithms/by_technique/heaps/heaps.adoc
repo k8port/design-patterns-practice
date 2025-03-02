@@ -1,0 +1,88 @@
+= Heaps
+
+
+[Overview of Heaps%collapsible]
+In a busy airport where flights are constantly landing and taking off, its vital to quickly be able to determine the next most important flight (e.g., for an emergency landing,  VIP departure, etc). Simultaneously, new flights must be integrated into the schedule constantly. The best way to track all this informationn while finding the highest-priority flight quickly is to use a heap. 
+
+Without an efficient data structure like the heap, solving would require scannning the entire schedule each time a decision needs to be made, a slow and error-prone process compounded by the number of flights added on a daily basis. Time complexity for this inefficient system is O(n) for each decision, where n is the number of flights in the schedule.
+
+Heaps are a special data structure that helps efficiently manage prioritized data. A min heap, for example, enables a way to always find flights leaving the earliest.  A max heap enables a way to determine which flights have been waiting on the tarmac the longest.  Finding such data can be done while also updating the heap with newly-added flights.
+
+`Heaps` are _specialized binary trees_ that fall into one of the following types:
+
+[unordered, indent=4]
+    *Min heap*::  [.small]#Each node is smaller than or equal to values of children and root node holds minimum value. Always prioritizes minimum value.#
+    *Max heap*::  [.small]#Each node is greater than or equal to values of children and root node holds maximum value. Always prioritizes maximum value.#
+    *Priority queue*:: [.small]#Abstract data type that retrieves elements based on a custom priority; often implemented with a heap for efficiency.#
+
+Min and max heaps have a fixed ordering, while `priority queues` are abstract and handle custom priority requirements for elements.
+
+[Problems Using a Single Heap%collapsible]
+---
+.Problems Using a Single Heap
+Heaps allow order (minimum or maximum) to be maintained without requiring sorting, which makes operations faster than other data structures like arrays or linked lists. Used often when solutions require repeated access to either the smallest or largest element in a dataset. 
+
+
+[Problems Using Two Heaps%collapsible]
+---
+.Problems Using Two Heaps
+
+Several scenarios require two heaps to optimize the solution. A common use case is for tracking smallest and largest elements, e.g., finding median, balancing data streams.  Maintaining a single min heap for the smaller half of the data and a single max heap for the larger half, the median can be quickly accessed or the distribution of elements quickly adjusted. Another use case is for problems requiring finding valid intervals or ranges: use one heap to store a set of values (e.g., start times), and the other to track the complementary set (e.g., end times).
+
+.Find Right Interval
+====
+`Find Right Interval` takes an array of intervals and requires finding the "right" interval at each pass,  with "right" indicating the smallest starting time after the current interval end time. If no such interval exists, return -1. The goal is to efficiently find the smallest start time that is greater than or equal to the current interval’s end-time.
+
+    
+Solve this problem using two min heaps: one for storing start times and one for storing end times and process intervals based on end time so that the smallest start time from the start heap is greater than or equal to its end time for each interval.
+
+Steps:
+
+1. Begin by populating 2 heaps with the start and end times.
+2. At each interval, pop the smallest end time from the end heap and remove from the start heap any start time that smaller than the current end time.
+3. If a valid start time remains in the start heap, it represents the right interval for the current interval.
+4. If no valid right interval exists, return -1 for that interval.
+
+Time complexity of this heap-based solution is O(nlogn), where n is the number of intervals because it performs O(n) insertions and deletions for each heap and each operation takes O(logn) time. The naive solution, scanning all intervals at every pass to find an interval's "right interval", has a time complexity of O(n²) since it requires n comparisons for each n interval.
+====
+
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Characteristics of Problems Solved Using Heaps#
+
+* *Linear input data*: sorted or unsorted linear data structure, e.g., array, linked list, string.
+  ** *sorted*: efficiently finds max and min element and insertions and deletions take O(logn) time, ensuring fast access to top elements
+  ** *unsorted*: still useful when frequent insertions or deletions are required.
+* *Streams of data*: data continuously arrives in real time and in an unpredictable order, requiring efficient handling and processing.  
+* *Calculation of max or min*: data can be categorized into one of two parts, and repeated calculations of min and max from each are required.
+* *Efficient retrieval of extreme values*: solution requires efficient retrieving or updating of min or max element repeatedly.
+* *Custom priority-based selection*: involves selecting the next element based on a specific priority at each iteration, e.g., processing largest or earliest
+
+***
+
+== Problems Solved Using Heaps
+[unordered]
+link:IPO.java[IPO]:: [.small]#Finding k distinct elements from list n with corresponding capitals and expected profits.#
+link:FindMedianFromDataStream.java[FindMedianFromDataStream]:: [.small]#Finding median value from list of ints fluctuating in size.#
+link:SlidingWindowMedian.java[SlidingWindowMedian]:: [.small]#Finding median of each window size k (subarray) from an array of ints.#
+link:ScheduleTasksOnMinimumMachines.java[ScheduleTasksOnMinimumMachines]:: [.small]#Finding min number of machines for scheduling a given list of task intervals (start and end time).#
+link:MeetingRoomsIII.java[MeetingRoomsIII]:: [.small]#Determining room number with having most meetings given list of meeting intervals and scheduling criteria.#
+link:LargestNumberAfterDigitSwapsByParity.java[LargestNumberAfterDigitSwapsByParity]:: [.small]#Finding largest possible value of num after performing swaps of any 2 digits with same parity.#
+link:CostToConnectSticks.java[CostToConnectSticks]:: [.small]#Finding min cost to connect array of sticks given input array of stick lengths where sum of lengths = cost.#
+link:LongestHappyString.java[LongestHappyString]:: [.small]#Finding longest possible string given 3 ints representing chars with specified max occurrences.#
+link:https://leetcode.com/problems/maximum-average-pass-ratio/[MaximumAveragePassRatio.java]:: [.small]#Finding highest possible pass ratios for all classes given array of classes and int x representing distributable passing students.#
+
+== Real-World Applications of Heaps
+[unordered]
+*Video Platforms*:: [.small]#Demographic tracking of viewers' median age, updated each time a new sign-up occurs.#
+*Gaming Matchmaking*:: [.small]#Matching players of similar skill level in game play using 2 heaps (one for min skill level, one for max skill level).#

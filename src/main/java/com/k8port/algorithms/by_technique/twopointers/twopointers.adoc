@@ -1,0 +1,44 @@
+= Two Pointers
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Problem Characteristics for Two Pointers Technique
+
+* *Linear data structure*: [.small]#_traversable via single index, e.g., array, linked list, string._#
+* *process pairs*: [.small]#_process data elements at different positions simultaneously._#
+* *dynamic pair movement*: [.small]#_pointers move independently of one another._#
+
+***
+
+== Problems solved with Two Pointers Technique
+[unordered]
+link:twosum/SumOfPairs.java[Two Sum]:: [.small]#finding two numbers in array that add up to a specific target.#
+link:threesum/SumOfThree.java[3Sum]:: [.small]#finding three numbers in array that add up to a specific target.#
+link:ValidPalindrome.java[Valid Palindrome]:: [.small]#checking if string is a palindrome.#
+link:RemoveDuplicates.java[Remove Duplicates]:: [.small]#removing duplicates from sorted array.#
+link:ReverseString.java[Reverse String]:: [.small]#reversing string.#
+link:ReverseWords.java[Reverse Words in a String]:: [.small]#reversing words in a string.#
+link:RotateArray.java[Rotate Array]:: [.small]#rotating array by k elements.#
+link:LongestSubstringWithoutRepeatingCharacters.java[Longest Substring Without Repeating Characters]:: [.small]#finding longest substring without repeating characters.#
+link:LongestPalindromicSubstring.java[Longest Palindromic Substring]:: [.small]#finding longest palindromic substring.#
+link:ContainerWithMostWater.java[Container With Most Water]:: [.small]#finding container with most water.#
+link:TrappingRainwater.java[Trapping Rain Water]:: [.small]#finding amount of water trapped between bars.#
+link:MergeSortedLists.java[Merge Two Sorted Lists]:: [.small]#merging two sorted linked lists.#
+link:RemoveNthNodeFromEnd.java[Remove Nth Node From End of List]:: [.small]#removing nth node from end of linked list.#
+link:LinkedListCycle.java[Linked List Cycle]:: [.small]#detecting cycle in linked list.#
+link:LinkedListCycleII.java[Linked List Cycle II]:: [.small]#finding starting node of cycle in linked list.#
+link:CircularArrayLoop.java[Circular Array Loop]:: [.small]#detecting cycle in circular array.#
+link:PalindromeLinkedList.java[Palindrome Linked List]:: [.small]#checking if linked list is a palindrome.#
+link:SortColors.java[Sort Colors]:: [.small]#sorting array with three unique numbers.#
+link:StrobogrammaticNumber.java[Strobogrammatic Number]:: [.small]#checking if number is a strobogrammatic number.#
+link:MinimumMovesToMakePalindrome.java[Minimum Moves to Make Palindrome] :: [.small]#finding minimum number of moves to make string a palindrome.#
+link:NextPalindrome.java[Next Palindrome]:: [.small]#finding next palindrome given same string characters or digits.#
+link:ValidPalindromeII.java[Valid Palindrome II]:: [.small]#checking if string is a palindrome, even if one character can be removed.#
+link:LCAOfBST.java[Lowest Common Ancestor of a Binary Search Tree]:: [.small]#finding lowest common ancestor of two nodes in a binary search tree.#
+
+
+### Enterprise use cases for Two Pointers Technique
+[unordered]
+ Memory Management:: Pattern is vital to memory allocation and deallocation processes.  A memory pool is initialized with two pointers: one pointing to the start of an available memory space (e.g., block, pool, etc.) and the other pointing to the end. When a process or data structure requests memory allocation, the start pointer moves forward, designating a new memory space for allocation.  When memory is deallocated, the start pointer shifts back, marking deallocated memory as available for reuse.  The end pointer remains static, indicating the total size of the memory pool.
+Data Compression:: Two-pointer technique is used in data compression algorithms like Run-Length Encoding (RLE). The algorithm iterates through the data, comparing each character with the next one.  When a sequence of identical characters is identified, the RLE algorithm replaces the sequence with a single character and a count of the number of occurrences.
+String Manipulation:: Two-pointer technique is used in string manipulation algorithms like reverse string, check palindrome, etc.  The algorithm iterates through the string, comparing characters from the start and end simultaneously.

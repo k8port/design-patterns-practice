@@ -1,0 +1,55 @@
+= Backtracking
+
+[Overview of Backtracking Pattern%collapsible]
+Imagine you are a contestant on the Amazing Race: you and your partner must drive  through a foreign city, visiting a handful of landmarks. You must visit all places.  The goal is to finish first and at least not last. A good strategy is to plan to cover shortest distance possible. According to the rules, you can visit the landmarks in any order, but you can’t visit the same place twice and you must end up back where you begin. 
+
+Another name for this problem is "city road trip problem", and it requires finding an optimal route that satisfies these conditions. Backtracking is a technique that allows exploration of different paths until the shortest one that fulfills all  conditions is found.
+
+Using a brute-force approach, a plan can be made by exploring each possible route:  every combination of landmarks possible. This quickly becomes very large as the number of places grow. Every possible route must be considered, including which landmark is the beginning and end spot and every possible order of landmarks inbetween. 
+
+Using backtracking, start by picking a place to start and choose the next place to visit based on proximity.  If either the current landmark has already been visited or there are no more places to move forward after the current place, move back (backtrack) to the previous place. On each choice check these conditions. Continue choosing next location, check conditions, and backtrack until all landmarks are visited according to the requirements. 
+
+Backtracking is an algorithmic technique for solving problems by incrementally constructing choices to solutions. Choices are abandoned once it is determined that the choice cannot lead to a feasible solution. Brute-force attempts to evaluate all possible solutions to select the required one. Backtracking avoids the computational cost of generating and testing all possible solutions, making it the more efficient approach. It also offers efficiency improvements over brute-force methods by applying constraints at each step to prune non-viable paths.
+
+As seen in the example above, backtracking works by exploring all potential routes toward a solution step-by-step. It can be visualized as traversing a state space tree, where each node represents a partial solution. Starting from root (empty solution), backtracking moves ever deeper into the tree, exploring branches (choices) until it finds a feasible solution or reaches a leaf node that cannot be extended into a complete solution. Upon reaching a dead end, the algorithm backtracks to previous state and explores a different branch. This process is repeated, with constraints applied at each step to avoid exploring paths that cannot lead to a successful, feasible solution.
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Backtracking Pattern
+[unordered]
+*Requires complete exploration of all possible solutions*:: problem requires exploring all possible paths to find the optimal solution.
+*Selection of best feasible solution*:: goal is to find best feasible solution from set of choices.
+
+.Characteristics NOT suitable for Backtracking Pattern
+*Solution invalidity disqualifies other choices*:: In problems where failing to meet criteria instantly disqualifies all other choices.
+
+***
+
+== Problems Solved Using Backtracking Pattern
+[unordered]
+link:N-Queens.java[N-Queens]:: [.small]#Place N queens on NxN chessboard so that no two queens threaten each other.#
+link:WordSearch.java[Word Search]:: [.small]#Find a word in a grid of letters.#
+link:HouseRobber.java[House Robber]:: [.small]#Find the maximum amount of money that can be robbed from a list of houses without robbing two adjacent houses.#
+link:RestoreIPAddresses.java[Restore IP Addresses]:: [.small]#Restore IP addresses from a string.#
+link:FloodFill.java[Flood Fill]:: [.small]#Fill connected cells with same color.#
+link:MinimumMovesToSpreadStonesOverGrid.java[Minimum Moves to Spread Stones Over Grid]:: [.small]#Find minimum number of moves to spread stones over a grid.#
+link:BinaryTreePaths.java[Binary Tree Paths]:: [.small]#Find all root-to-leaf paths in a binary tree.#
+link:BinaryWatch.java[Binary Watch]:: [.small]#Find all possible times that can be written on a given 24-hour digital clock.#
+link:OptimalAccountBalancing.java[Optimal Account Balancing]:: [.small]#Balance an array of debts.#
+link:SudokuSolver.java[Sudoku Solver]:: [.small]#Solve a Sudoku puzzle.#
+link:MatchsticksToSquare.java[Matchsticks to Square]:: [.small]#Determine if four matchsticks can form a square.#
+
+== Real World Applications of Backtracking Pattern
+[unordered]
+*Syntax Analysis*:: [.small]#Compilers us recursive descent parsing, which is a form backtracking, to analyze syntax by matching a sequence of tokens against grammar rules. When a mismatch occurs, parser backtracks to previous point to try a different rule of grammar, ensuring that complex, nested structures are accurately and correctly parsed.#
+*Game AI*:: [.small]#In games like Chess and Go, AI algorithms use backtracking to try out different moves and evaluate them based on game rules, selecting the best move for the current position.#
+*Pathfinding Algorithms*:: [.small]#In solving problems like maze navigation or network routing, backtracking used to explore different paths and connections to find optimal route.#

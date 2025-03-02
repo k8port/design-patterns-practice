@@ -1,0 +1,40 @@
+= Fast and Slow Pointers
+
+Uses 2 pointers to traverse an iterable data structure at different speeds, often to identify cycles or find a target element.
+Speed of pointers can be adjusted depending on problem statement.  While Two Pointers focuses on comparing data values,
+Fast and Slow Pointers focuses on structure or properties of data structure.
+
+Pointers start at same position and move at different speeds, e.g., slow 1 step at a time, fast 2 steps at a time.
+If a cycle exists, two pointers eventually meet. Allows detection of properties like cycles, intersections or midpoints.
+
+Visualize 2 runners on a circular track.  If track is circular, faster runner will catch up and eventually meet slower runner.  This is analogous to cycle detection in data structures.
+
+***
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Problem Characteristics for Fast and Slow Pointers Technique#
+
+* *Linear data structure*: [.small]#_traversable via single index, e.g., array, linked list, string._#
+
+...OR when either of these conditions is fulfilled:
+
+* *cycle or intersection detection*: [.small]#_detecting loop within linked lists or arrays or involves finding intersection between two._#
+
+* *find starting element at second quantile*: [.small]#_finding starting element in 2nd quantile, i.e., 2nd 1/2, 2nd tertile, 2nd quartile, etc. e.g., find middle element of array or linked list._#
+
+***
+
+== Problems solved with Fast and Slow Pointers Technique
+[unordered]
+link:LinkedListCycle.java[Linked List Cycle]:: [.small]#detecting cycle in linked list.#
+link:LinkedListCycleII.java[Linked List Cycle II]:: [.small]#finding starting node of cycle in linked list.#
+link:CircularArrayLoop.java[Circular Array Loop]:: [.small]#detecting cycle in circular array.#
+link:HappyNumber.java[Happy Number]:: [.small]#checking if number is a happy number.#
+link:MiddleOfLinkedList.java[Middle of Linked List]:: [.small]#finding middle element of linked list.#
+
+
+== Real World Use Cases for Fast and Slow Pointers Technique
+[unordered]
+*Symlink Verification*:: [.small]#Imagine an IT administrator responsible for maintaining a large server: in one directory, multiple files and symbolic links (symlinks) are scattered around, each pointing to various files or other symlinks. Occasionally, a script or configuration might create an infinite loop, e.g., symlink A points to B, and B eventually links back to A. This creates an infinite cycle. Symlink verification utilities use fast and slow pointers to detect loops of symlinks endlessly referencing one another. The slow pointer (aka “tortoise”) steps links one at a time and the fast pointer (aka “hare”) steps two at a time. If both land on the same file or link it confirms a cycle.#[.small]
+*Compiling Object-Oriented Programs*:: [.small]#Used to compile object-oriented programs and detects cycles in inheritance hierarchies. Slow pointer (“tortoise”) follows class hierarchy a step at a time, while fast pointer (“hare”) follows two at a time. If both land on same class or interface, it confirms a cycle.#[.small]

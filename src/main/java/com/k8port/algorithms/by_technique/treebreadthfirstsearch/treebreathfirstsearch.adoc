@@ -1,0 +1,84 @@
+= Tree Breadth-First Search
+
+[Overview of Tree Breadth-First Search%collapsible]
+Trees are graphs containing the following properties:
+* Undirected
+* Acyclic
+* Connected graph where any two vertices are connected by exactly one path.*
+* Nodes contain values of any data type
+
+Key features that set trees apart from arrays or linked lists:
+
+1. Data organized hierarchically with root node on top and child nodes branching out from root.
+2. Nonlinear, e.g., elements arranged in branching structure.
+3. Time complexity for search and insert operations typically `O(log n)`, where `n` is number of elements in tree. In contrast, time complexity for search and insert operations in arrays and linked lists typically `O(n)`, where `n` is number of elements in array or list.
+4. Multiple ways to traverse them.
+
+Naive approach to exploring tree is to revisit already-traversed nodes. More specifically, start at root and traverse branch to leaf node then explore another branch. Doing it like this means revisiting many nodes more than once and takes  time complexity to O(n^2^) in the worst case.
+
+Tree breadth-first search (BFS) is a traversal method that explores trees level-by-level starting from root. Nodes directly connected to root are considered to be level 1, while nodes connected to those level 1 nodes are level 2, etc.
+
+Since Tree BFS visits each node exactly once, it guarantees traversal in `O(n)` time.
+
+[discrete]
+= Key features of tree breadth-first search
+
+* *Initialization*: BFS begins search from root.
+* *Exploring adjacent nodes*: BFS examines all nodes at current level before moving onto nodes at next level.
+* *Traversal strategy*: BFS explores nodes layer-by-layer rather than depth-first to ensure that all nodes at a level are visited before moving to next level.
+* *Node discovery*: As BFS discovers new nodes, it processes them according to search requirements, i.e., BFS stops when the target node is found. Otherwise, it continues exploring nodes and enqueues them for further processing.
+* *Stopping condition*: BFS terminates when either desired node is found or when all nodes are explored.
+
+.Steps to implement Tree Breadth-First Search
+====
+1. Initialize a queue and enqueue root node using `queue.enqueue(root)`. The queue ensures nodes are processed as "first in, first out (FIFO)". 
+2. Loop continuously until queue is empty (`while queue!= empty`). At each iteration: 
+a. Remove front node `queue.dequeue()` 
+b. Process it `visit(currentNode)`.
+3. Check for child nodes of current node:
+a. If left child exists, enqueue it `queue.enqueue(currentNode.left)`
+b. If right child exists, enqueue it `queue.enqueue(currentNode.right)`
+====
+
+***
+NOTE: In BFS, traversal within a level isn't strictly performed left-to-right. While enforcing level-by-level traversal, specific order within the level is not envforced.
+***
+
+== Characteristics of Tree Breadth-First Search
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+[unordered]
+*Tree data structure*:: Input data is tree or the cost to transform it into tree is low.
+*Not wide tree*:: Input data is tree and is not excessively wide, otherwise time complexity becomes prohibitive.
+*Level-by-level traversal*:: Solution dictates traversing tree one level at a time, e.g., "find level order traversal of nodes of tree or variant of this ordering".
+*Solution near the root*:: Solution probably lies near root of the tree. When solution is closer to leaves, BFS not efficient since it exhaustively explores nodes level by level and depth-first-search (DFS) is more suitable.
+***
+
+== Problems Solved Using Tree Breadth-First Search
+[unordered]
+link:FindMinimumDepthOfTree.java[Find Minimum Depth of Tree]:: [.small]#finding minimum depth of tree.#
+link:BottomUpLevelOrderTraversal.java[Bottom Up Level Order Traversal]:: [.small]#traversing tree level by level from bottom up.#
+link:BinaryTreeLevelOrderTraversal.java[Binary Tree Level Order Traversal]:: [.small]#traversing tree level by level.#
+link:BinaryTreeZigzagLevelOrderTraversal.java[Binary Tree Zigzag Level Order Traversal]:: [.small]#Finding zigzag level order traversal of tree.#
+link:PopulatingNextRightPointersInEachNode.java[Populating Next Right Pointers in Each Node]:: [.small]#Populating next right pointers in each node.#
+link:VerticalOrderTraversalOfBinaryTree.java[Vertical Order Traversal of Binary Tree]:: [.small]#Finding vertical order traversal of tree.#
+link:SymmetricTree.java[Symmetric Tree]:: [.small]#Checking if tree is symmetric.#
+link:WordLadder.java[Word Ladder]:: [.small]#Finding shortest transformation sequence from one word to another.#
+link:TwoSumIV.java[Two Sum IV]:: [.small]#Finding if there exists a pair of numbers in tree which add up to a given sum.#
+link:ConnectAllSiblingsOfBinaryTree.java[Connect All Siblings of Binary Tree]:: [.small]#Connecting all siblings in binary tree.#
+
+== Real World Applications of Tree Breadth-First Search
+[unordered]
+*File system analysis*:: [.small]#Directory structure represented as tree, each directory a node, and each file a leaf. Tree’s root represents starting directory. BFS used to traverse tree, helping to analyze file dependencies or find shortest path to specified file.#
+*Version control systems*:: [.small]#BFS used in version control (e.g., Git) to traverse file systems and identify changes made to files and directories, crucial for tracking revisions, managing branches, and merging changes.#
+*Genealogy and evolutionary trees*:: [.small]#BFS used in biology to analyze genealogy and evolutionary trees. Starting from specific organism or species, BFS reconstructs evolutionary histories, analyzing genetic relationships or studying species diversification patterns.#
+*Traversing DOM tree*:: [.small]#BFS used to traverse DOM structure of web page, since HTML DOM is tree structure. Each tree level has any number of nodes depending on number of nested HTML tags.#

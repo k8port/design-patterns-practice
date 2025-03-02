@@ -1,0 +1,70 @@
+= Subsets
+:icons: font
+
+[Overview of Subsets Pattern%collapsible]
+
+Subsets pattern is used to solve problems involving all possible combinations of elements from a given data structure.  Useful when dataset is a `Set` containing unique elements or arrays/lists containing duplicate elements. Used to generated all subsets based on conditions of given problem.
+
+Most commonly, subsets are built incrementally, either including or excluding elements depending on problem constraints and process continued for remaining elements.
+
+.How to build a Subset
+====
+1. Begin with initial subset `subsets = [[]]`.  
+2. Process array elements while expanding list of subsets: 
+3. Iterate all existing subsets 
+4. For each `num` in `arr`: 
+[ordered, indent=2]
+a. create new subset
+b. append `num` to new subset
+c. append `num` to each existing subset
+d. append new subset to list of subsets
+5. Return list of subsets.
+====
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Know difference between alogirthmic patterns and programming patterns.
+
+.Backtrarcking 
+`Backtracking pattern` is used generate required subsets of given data structure: it applies to broader range of problems where evaluating all possibilities is required and having various constraints, rules, or conditions. 
+Not all backtracking problems involve finding subsets which is why its necessary to discuss Subsets as separate programming pattern.
+
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Problems Solved Using Subsets Pattern
+[unordered]
+*Requires Combinations or Subsets*:: Requires generating combinations or subsets from input as solution or step toward solution.
+
+***
+
+== Problems Solved Using Subsets Pattern
+[unordered]
+link:Permutations.java[Permutations]:: Finding all possible permutations on string.
+link:CombinationSum.java[CombinationSum]:: Finding all combinations of integers from array that sum to target value.
+link:Subsets.java[Subsets]:: Finding all possible subsets of given array.
+link:LetterCombinationsOfPhoneNumber.java[LetterCombinationsOfPhoneNumber]:: Finding all possible letter combinations given a string of numbers.
+link:GenerateParens.java[GenerateParens]::  Finding all possible combinations of ballance parentheses given a number `n`.
+link:FindKSumSubsets.java[FindKSumSubsets]::  Finding all possible subsets of ints from given array whose sum is `k`.
+
+== Real World Applications of Subsets Pattern
+[unordered]     
+*Media Playlists*:: Generate all combinations of available movies to meet viewer's preference ().
+*Test Case Generation*:: Generates combinations of input values and scenarios for automated software testing.
+*Feature Selection in Machine Learning*:: Evaluate performance of combinations of features to find optimal model.

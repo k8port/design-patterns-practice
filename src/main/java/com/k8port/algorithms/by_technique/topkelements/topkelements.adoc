@@ -1,0 +1,80 @@
+= Top K Elements
+
+[Overview of Top K Elements%collapsible]
+`Top k elements` pattern is a technique used to efficiently find a specified number (`k`) of elements.  Used when task is to identify largest, smallest, or most/least frequent elements within an _unsorted_ collection.
+
+Naive approach involves first sorting entire collection (`O(nlog(n))` and selecting top `k` elements `(O(k))`. 
+
+Using Top K Elements pattern bypasses need for full sorting by managing which elements to compare and track, reducing time complexity to `O(nlogk)``.
+
+Uses `Heap` to track smallest/largest `k` elements (max or min heap) since it allows efficient maintainence of elements.
+
+
+.Top K Smallest/Largest Elements
+====
+
+***
+
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+Tip: Use min heap to find smallest elements and max heap to find largest. 
+
+***
+
+Steps:
+
+1. Insert first k elements from a given set of elements into heap.
+2. Iterate through remaining elements of given set.
+3. If element found smaller/larger than top, remove top element and insert the smaller/larger element
+
+Efficiency comes from heap's ability to insert and remove elements in `O(logk)` time.  Only `k` elements from heap require maintenance, and these operations are quick.  `n` elements in the given set can be processed in `O(nlogk)` time.
+====
+
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.[.small]#Characteristics of Top K Elements Pattern:#
+
+* *Unsorted list analysis*: Extracting specified subset of elements based on size (largest or smallest), frequency (most or least frequent), or other similar criteria from an unsorted list is a requirement of the final solution, or necessary as an intermediate step.
+* *Identifying specified subset*: Identifying a subset rather than just a single extreme value. Look for phrasing like `top k`, `kth largest/smallest`, `k most frequent`, `k closest`, or `k highest/lowest`.
+
+.[.small]#Problem characteristics NOT good for pattern:#
+* *Presorted Input*: Having pre-sorted input data.
+* *Find Single Extreme Value*: Asking to find a single, extreme value from a dataset.
+
+***
+
+== Problems Solved Using Top K Elements Pattern
+[unordered]
+link:KthLargestElementInAStream.java[KthLargestElementInAStream]:: [.small]#Finding kth largest element in a stream.#
+link:ReorganizeString.java[ReorganizeString]:: [.small]#Rearranging string so that adjacent characters are not the same.#
+link:KClosestPointsToOrigin.java[KClosestPointsToOrigin]:: [.small]#Finding k closest points (x, y coordinates) on a plane (2d array).#
+link:TopKFrequentElements.java[TopKFrequentElements]:: [.small]#Finding k most frequent elements in a list.#
+link:KthLargestElementInAnArray.java[KthLargestElementInAnArray]:: [.small]#Finding kth largest element in an unsorted array.#
+link:ThirdMaximumNumber.java[ThirdMaximumNumber]:: [.small]#Finding 3rd maximum distinct number in an array.#
+link:FindSubsequenceOfLengthKWithLargestSum.java[FindSubsequenceOfLengthKWithLargestSum]:: [.small]#Finding subsequence of nums of length k having largest possible sum.#
+link:MinimumCostToHireKWorkers.java[MinimumCostToHireKWorkers]:: [.small]#Finding least amount of money required to hire k workers (given quality rating, wage expected).#
+link:MaximalScoreAfterApplyingKOperations.java[MaximalScoreAfterApplyingKOperations]:: [.small]#Finding max possible score after applying k operations to given dataset (array).#
+link:FindKthLargestIntegerInAnArray.java[FindKthLargestIntegerInAnArray]:: [.small]#Finding kth largest number in a given array.#
+
+== Real World Applications of Top K Elements Pattern
+[unordered]
+*Location-based services in ride-share apps*:: [.small]#When a user requests a ride, the app must find the closest available drivers to ensure quick pickup. Inefficient to consider every driver in a city - uses `top k elements` pattern to efficiently determine n closest drivers to any given user.#
+*Performance analysis of financial markets*:: [.small]#To analyze broker performance by highest transaction volumes or other similar metrics. Uses dataset with broker IDs and transaction volumes and uses `top K elements` pattern to identify brokers leading the market based on frequency of transactions or other relevant performance indicators.#
+*Social media trend analysis*:: [.small]#Identifies popular trending topics by analyzing hashtags or keywords and uses `top K elements` pattern to filter out 
+top topics based on frequency.#

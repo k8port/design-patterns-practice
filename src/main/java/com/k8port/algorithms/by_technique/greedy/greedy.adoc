@@ -1,0 +1,62 @@
+= Greedy
+
+Greedy is an algorithmic approach for tackling optimization problems where the goal is to find the optimal solution under given constraints.
+
+Greedy is an algorithmic paradigm that builds upon a solution piece by piece through a series of choices, each time choosing best option in given moment,
+(e.g., greedy choice). Future implications of choices are not considered, only maximizing immediate benefits and choosing next thing offering most -
+an approach used to solve optimization problems.
+
+Greedy works by constructing solution from smallest possible constituent parts. The best solution is not always the one found since  always opting for immediate benefit, better options available later on can be missed. Greedy algorithms can get stuck in what’s called `local optimal solution` without finding `global optimal solution`.
+
+A classic example is in organizing networks, e.g., connecting computers using least amount of cable. Prim’s algorithm uses a greedy method to efficiently find minimum amount of cable necessary to connect all computers in a network.
+
+Greedy algorithms offer straightforward and effective way to solve optimization problems through making most advantageous choice at any given step.
+
+***
+:tip-caption: 💡
+ifdef::env-github[]
+:tip-caption: :bulb:
+endif::env-github[]
+ifdef::env-asciidoctor[]
+:tip-caption: :bulb:
+endif::env-asciidoctor[]
+
+TIP: Use pattern when problem matches criteria outlined below.
+
+.Characteristics of Greedy Pattern
+[unordered]
+*Optimization Problems*:: Finding the best possible solution under given constraints, e.g., maximizing or minimizing value like cost, distance, time, etc.
+*Making local choices leads to global solution*:: Problem solved by making simple decisions based on current best option or state without looking ahead.
+
+.Problem characteristics NOT suitable for Greedy Technique:
+*Local choice leads to sub-optimal global*:: Making simple choice based on current best option or state leads to sub-optimal result.
+*Problem lacks clear local options*:: Problem doesn't naturally break down into series of choices where best option can be identified.
+
+***
+
+== Problems Solved Using Greedy Pattern
+[unordered]
+link:LoadingMaximumContainers.java[LoadingMaximumContainers]:: [.small]#Fill cargo with maximum containers without exceeding capacity.#
+link:GraphColoring.java[GraphColoring]:: [.small]#Coloring a graph so that no 2 vertces are colored the same and minimum number of colors used.#
+link:JumpGame.java[JumpGame]:: [.small]#Choosing player actions in game to get from first to last square using a choice on number of jumps to take.#
+link:LifeboatsOnASinkingShip.java[LifeboatsOnASinkingShip]:: [.small]#Finding minimum number of lifeboats to save all passengers on sinking ship.#
+link:GasStation.java[GasStation]:: [.small]#Finding gas consumption options to lead to specified outcome along a circular route.#
+link:TwoCityScheduling.java[TwoCityScheduling]:: [.small]#Finding minimum cost to invite all candidates to interview at one of 2 possible locations.#
+link:MinimumNumberOfRefuelingStops.java[MinimumNumberOfRefuelingStops]:: [.small]#Finding minimum number of refueling stops a given vehicle must make along a given route.#
+link:LargestPalindromicNumber.java[LargestPalindromicNumber]:: [.small]#Finding largest palindromic number as a string using some or all digits in given number `n`.#
+link:AssignCookies.java[AssignCookies]:: [.small]#Distributing cookines to maximize amount received by each child under given constraints.#
+link:RearrangingFruits.java[RearrangingFruits]:: [.small]#Finding minimum swaps required to make 2 identical baskets of fruit given 2 arrays representing current baskets.#
+link:NumberOfStepsToReduceBinaryNumberTo1.java[NumberOfStepsToReduceBinaryNumberTo1]:: [.small]#Finding minimum number of steps required to reduce given binary to 1 according to specified constraints.#
+link:MaximumSwap.java[MaximumSwap]:: [.small]#Finding maximum possible number that can be formed by swapping at least 2 digits once.#
+link:CanPlaceFlowers.java[CanPlaceFlowers]:: [.small]#Determining if given number n of flowers can be placed in flowerbed (int list) given constraints.#
+link:LargestOddNumberInString.java[LargestOddNumberInString]:: [.small]#Finding largest odd integer formable as substring of given string of numbers representing large integer.#
+link:JumpGameII.java[JumpGameII]:: [.small]#Variation on Jump Game.#
+link:BestTimeToBuyAndSellStock.java[BestTimeToBuyAndSellStock]:: [.small]#Maximizing profit through selection of buy and sell days on given array of prices.#
+
+== Real World Applications of Greedy Pattern
+[unordered]
+*CPU scheduling algorithms*:: [.small]#In operating systems, managing how processes are assigned to CPU to execute is critical to efficiency and performance.Greedy algorithms used to decide task order based on specified criteria like minimizing waiting time, maximizing utilization, ensuring fairness among users, etc. Through greedy choices, (e.g., Shortest Job Next), systems aim for overall optimization throughput and resource utilization.#
+*Network Design in LANs*:: [.small]#Large Local Area Networks (LANs) connecting numerous devices aim for efficient data transmission and use Greedy to design network infrastructure so that data packets travel in most efficient possible way. Finds Minimum Spanning Tree (MST) for network and uses greedy algorithm (e.g., Prim’s, Kruskal’s) to ensure all switches are connected by at least 1 total cable length. Approach ensures minimal data transmission time and reduced chance of bottlenecks.#
+*Friend recommendations on social networking websites*:: [.small]#Social networking platforms enhance user engagement by suggesting new friends or connections using greedy approach. Dijkstra’s algorithm employs a greedy technique to find the shortest path between nodes in a graph.#
+*Scheduling tasks on minimum number of machines*:: [.small]#Greedy algorithm used to schedule tasks on minimum number of machines to minimize waiting time and maximize efficiency. Finds optimal machine allocation for each task based on current workload and machine availability.#
+*Finding minimum number of refueling stops*:: [.small]#Greedy algorithm used to find minimum number of refueling stops for a vehicle to complete a journey. Considers current fuel level and distance to next refueling station to make optimal decision.#
